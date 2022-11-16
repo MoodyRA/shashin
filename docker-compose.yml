@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  php:
+    build:
+      context: docker/php
+      dockerfile: Dockerfile
+    #      to test locally
+    #      context: ./../dockerfiles/php/8.1
+    #      dockerfile: Dockerfile
+    volumes:
+      - ./docker/php/app.ini:/usr/local/etc/php/conf.d/app.ini
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./:/home/shashin
+  web:
+    image: nginx:alpine
+    environment:
+      - TZ=Europe/Paris
+    depends_on:
+      - php
+    ports:
+      - ${WEB_PORT}:80
+    volumes:
+      - ./:/home/shashin
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
