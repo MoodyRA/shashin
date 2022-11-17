@@ -1,9 +1,9 @@
 server {
     index index.php index.html;
-    server_name shashin.localhost;
+    server_name ${APP_NAME}.localhost;
     error_log  /var/log/nginx/error.log;
     access_log /var/log/nginx/access.log;
-    root /home/shashin/public;
+    root /home/${APP_NAME}/public;
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;

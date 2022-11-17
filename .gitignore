@@ -1,5 +1,6 @@
 .env
 vendor
+.ash_history
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
