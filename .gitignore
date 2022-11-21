@@ -1,4 +1,3 @@
-.env
 vendor
 .ash_history
 ###> symfony/framework-bundle ###
@@ -10,3 +9,5 @@ vendor
 /var/
 /temp/vendor/
 ###< symfony/framework-bundle ###
+
+.composer
