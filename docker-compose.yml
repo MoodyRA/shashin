@@ -21,7 +21,7 @@ services:
       - ./:/home/${APP_NAME}
 
   web:
-    image: nginx:alpine
+    image: nginx:1.23-alpine
     environment:
       - TZ=Europe/Paris
     depends_on:
