@@ -123,6 +123,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/moodyra/value-objects" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -195,7 +198,7 @@
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
+      <phpunit_by_interpreter interpreter_id="e9e5cc0c-44c9-4528-b324-b565aa70fe37" configuration_file_path="/home/${APP_NAME}/phpunit.xml.dist" custom_loader_path="/home/${APP_NAME}/vendor/autoload.php" use_configuration_file="true" />
     </phpunit_settings>
   </component>
 </project>
