@@ -4,7 +4,7 @@ ARG USER_ID
 ARG GROUP_ID
 ARG APP_NAME
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash git
 
 RUN addgroup --gid ${GROUP_ID} ${APP_NAME} \
     && adduser --disabled-password --uid ${USER_ID} --ingroup ${APP_NAME} ${APP_NAME}

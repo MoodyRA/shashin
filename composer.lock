@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b22a3b5b04b81b7657775153004ac47a",
+    "content-hash": "41c223d1fed4f929b0b39390dcb914d1",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -809,6 +809,29 @@
                 }
             ],
             "time": "2022-07-24T12:00:55+00:00"
+        },
+        {
+            "name": "moodyra/value-objects",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MoodyRA/value-objects.git",
+                "reference": "ced20fdc6ef85f9cd03787ce42471b810c92a782"
+            },
+            "default-branch": true,
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Moody\\ValueObject\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Moody\\ValueObject\\Tests\\": "tests/"
+                }
+            },
+            "description": "A collection of value objects.",
+            "time": "2022-11-26T15:29:56+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -8883,8 +8906,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "moodyra/value-objects": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
