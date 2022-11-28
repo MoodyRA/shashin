@@ -1,12 +1,12 @@
 #!/bin/bash
 
-cd /home/$APP_NAME
-if [ -e /home/$APP_NAME/composer.json ]; then
+cd /home/shashin
+if [ -e /home/shashin/composer.json ]; then
   composer install
 fi
 
-chown -R $APP_NAME: /home/$APP_NAME
+chown -R $USER_NAME: /home/shashin
 
-echo "$APP_NAME prêt : http://$APP_NAME.localhost:$WEB_PORT"
+echo "shashin prêt : http://shashin.localhost:$WEB_PORT"
 
 php-fpm

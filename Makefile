@@ -25,7 +25,6 @@ help:
 ## démarrage des containers
 start:
 	@chmod +x ./docker/php/entrypoint.sh
-	@envsubst '$$APP_NAME' < ./docker/web/default.conf.tpl > ./docker/web/default.conf
 	@docker compose up
 
 ## Fermeture des containers
@@ -43,11 +42,11 @@ prune:
 ## Execution de la commande "composer install"
 composer-install:
 	@docker compose exec php bash -c "\
-		cd /home/${APP_NAME} && composer install"
+		cd /home/shashin && composer install"
 
 ## Ouverture d'un bash dans le container php
 bash-php:
-	@docker compose exec -w "/home/${APP_NAME}" php sh
+	@docker compose exec -w "/home/shashin" php sh
 
 ## Ouverture d'un bash dans le container web
 bash-web:

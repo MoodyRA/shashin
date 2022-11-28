@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 // the "name" and "description" arguments of AsCommand replace the
 // static $defaultName and $defaultDescription properties
 #[AsCommand(
-    name: 'pp:test-command',
+    name: 'app:test-command',
     description: 'Test command.',
     aliases: ['app:test-command'],
     hidden: false
