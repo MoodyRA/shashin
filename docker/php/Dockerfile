@@ -16,5 +16,5 @@ RUN apk add --no-cache bash $PHPIZE_DEPS \
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
-USER ${APP_NAME}
+USER ${USER_NAME}
 
