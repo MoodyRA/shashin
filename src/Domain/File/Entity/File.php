@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Domain\File\Entity;
 
 use App\Domain\File\Enum\FileType;
-use App\Domain\File\FileStorageInterface;
 use DateTime;
 use Moody\ValueObject\Identity\Uuid;
 use UnexpectedValueException;
@@ -13,13 +12,12 @@ use UnexpectedValueException;
 class File
 {
     /**
-     * @param Uuid                 $id
-     * @param string               $name
-     * @param FileType             $type
-     * @param string               $relativePath
-     * @param int                  $size
-     * @param FileStorageInterface $storage
-     * @param DateTime             $addedTime
+     * @param Uuid     $id
+     * @param string   $name
+     * @param FileType $type
+     * @param string   $relativePath
+     * @param int      $size
+     * @param DateTime $addedTime
      * @throws UnexpectedValueException
      */
     public function __construct(
@@ -27,8 +25,7 @@ class File
         protected string $name,
         protected FileType $type,
         protected string $relativePath,
-        protected int $size,
-        protected FileStorageInterface $storage,
+        protected int $size = 0,
         protected DateTime $addedTime = new DateTime('now')
     ) {
         $this->verifyType();
@@ -80,14 +77,6 @@ class File
     public function getSize(): int
     {
         return $this->size;
-    }
-
-    /**
-     * @return FileStorageInterface
-     */
-    public function getStorage(): FileStorageInterface
-    {
-        return $this->storage;
     }
 
     /**
