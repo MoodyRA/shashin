@@ -7,14 +7,12 @@ use App\Domain\File\Entity\File;
 interface FileStorageInterface
 {
     /**
-     * @param File $file
+     * Déplace un fichier source vers la destination indiqué dans $file.
+     *
+     * @param string $source
+     * @param File   $file
      * @return void
+     * @throws FileStorageException
      */
-    public function add(File $file): void;
-
-    /**
-     * @param File $file
-     * @return void
-     */
-    public function remove(File $file): void;
+    public function move(string $source, File $file): void;
 }

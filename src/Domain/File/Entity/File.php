@@ -41,4 +41,70 @@ class File
     protected function verifyType(): void
     {
     }
+
+    /**
+     * @return Uuid
+     */
+    public function getId(): Uuid
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return FileType
+     */
+    public function getType(): FileType
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRelativePath(): string
+    {
+        return $this->relativePath;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSize(): int
+    {
+        return $this->size;
+    }
+
+    /**
+     * @return FileStorageInterface
+     */
+    public function getStorage(): FileStorageInterface
+    {
+        return $this->storage;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getAddedTime(): DateTime
+    {
+        return $this->addedTime;
+    }
+
+    /**
+     * Chemin à utiliser pour enregister le fichier dans un système de stockage
+     *
+     * @return string
+     */
+    public function getFileName(): string
+    {
+        return rtrim($this->relativePath, '\\/') . '/' . $this->id->getValue() . $this->type->valueWithDot();
+    }
 }

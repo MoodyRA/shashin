@@ -6,9 +6,15 @@ namespace App\Domain\File\Enum;
 
 enum FileType: string
 {
+    case BMP = 'bmp';
+    case GIF = 'gif';
     case JPEG = 'jpeg';
-    case PNG = 'png';
+    case JPG = 'jpg';
     case PDF = 'pdf';
+    case PNG = 'png';
+    case TIF = 'tif';
+    case TIFF = 'tiff';
+    case WEBP = 'webp';
 
     /**
      * @return bool
@@ -27,7 +33,7 @@ enum FileType: string
      */
     public function imageTypes(): array
     {
-        return [self::JPEG, self::PNG];
+        return [self::BMP, self::GIF, self::JPEG, self::JPG, self::PNG, self::TIF, self::TIFF, self::WEBP];
     }
 
     /**
@@ -35,6 +41,27 @@ enum FileType: string
      */
     public function imageTypeValues(): array
     {
-        return [self::JPEG->value, self::PNG->value];
+        $values = [];
+        foreach ($this->imageTypes() as $type) {
+            $values[] = $type->value;
+        }
+        return $values;
+    }
+
+    /**
+     * @return string
+     */
+    public function valueWithDot(): string
+    {
+        return '.' . $this->value;
+    }
+
+    /**
+     * @param string $fileName
+     * @return ?FileType
+     */
+    public static function fromFileName(string $fileName): ?FileType
+    {
+        return self::tryFrom(strtolower(pathinfo($fileName, PATHINFO_EXTENSION)));
     }
 }
