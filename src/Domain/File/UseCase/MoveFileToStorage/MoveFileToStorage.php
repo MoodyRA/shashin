@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\File\UseCase\MoveFileToStorage;
 
+use App\Domain\File\Enum\FileError;
+use App\Domain\File\FileStorageException;
 use App\Domain\File\FileStorageInterface;
 use Webmozart\Assert\Assert;
 use Webmozart\Assert\InvalidArgumentException;
@@ -28,7 +30,11 @@ class MoveFileToStorage
         $response = new MoveFileToStorageResponse();
         $isValid = $this->checkRequest($request, $response);
         if ($isValid) {
-            $this->storage->move($request->getSourcePath(), $request->getFile());
+            try {
+                $this->storage->move($request->getSourcePath(), $request->getFile());
+            } catch (FileStorageException $e) {
+                $response->addError(FileError::FILE_MOVE_FAILED);
+            }
         }
         $presenter->present($response);
     }
@@ -44,7 +50,7 @@ class MoveFileToStorage
             Assert::fileExists($request->getSourcePath());
             return true;
         } catch (InvalidArgumentException $e) {
-            $response->addError($e->getMessage());
+            $response->addError(FileError::FILE_NOT_FOUND);
             return false;
         }
     }

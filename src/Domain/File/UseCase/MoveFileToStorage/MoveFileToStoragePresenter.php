@@ -8,7 +8,7 @@ interface MoveFileToStoragePresenter
 {
     /**
      * @param MoveFileToStorageResponse $response
-     * @return mixed
+     * @return void
      */
-    public function present(MoveFileToStorageResponse $response);
+    public function present(MoveFileToStorageResponse $response): void;
 }

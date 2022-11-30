@@ -4,17 +4,27 @@ declare(strict_types=1);
 
 namespace App\Domain\File\UseCase\MoveFileToStorage;
 
+use App\Domain\File\Enum\FileError;
+
 class MoveFileToStorageResponse
 {
-    /** @var array */
+    /** @var FileError[] */
     private array $errors = [];
 
     /**
-     * @param string $error
+     * @param FileError $error
      * @return void
      */
-    public function addError(string $error)
+    public function addError(FileError $error): void
     {
         $this->errors[] = $error;
+    }
+
+    /**
+     * @return array
+     */
+    public function getErrors(): array
+    {
+        return $this->errors;
     }
 }
