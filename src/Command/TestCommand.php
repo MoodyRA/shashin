@@ -2,11 +2,17 @@
 
 namespace App\Command;
 
-use Moody\ValueObject\DateTime\Date;
+use App\Domain\File\Entity\File;
+use App\Domain\File\Enum\FileType;
+use App\Domain\Photo\Entity\Photo;
+use App\Infrastructure\FileStorage\Local\LocalFileStorageAdapter;
+use App\Infrastructure\FileStorage\PathPrefixer;
+use Moody\ValueObject\Identity\Uuid;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use UnexpectedValueException;
 
 // the "name" and "description" arguments of AsCommand replace the
 // static $defaultName and $defaultDescription properties
@@ -20,8 +26,18 @@ class TestCommand extends Command
 {
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-       $date = new Date(2022,11,26);
-        echo 'foo';
+        try {
+            $source = '/home/shashin/data/upload/chateau_ambulant.jpg';
+            $source2 = '/home/shashin/data/upload/IMG_20220730_230613.jpg';
+            $type = FileType::fromFileName($source);
+            $storage = new LocalFileStorageAdapter('/home/shashin/data/gallery');
+            $file = new File(Uuid::generate(), 'myFile', $type, '');
+            $storage->move($source, $file);
+            $storage->move($source2, $file);
+        } catch (UnexpectedValueException $e) {
+            echo $e->getMessage();
+        }
+
         return Command::SUCCESS;
     }
 

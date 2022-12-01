@@ -7,4 +7,5 @@ namespace App\Presentation\Notification;
 enum ConsoleNotificationType: string
 {
     case ERROR = 'error';
+    case WARNING = 'warning';
 }
