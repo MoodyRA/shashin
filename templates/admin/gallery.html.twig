@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallerie</title>
+</head>
+<body>
+
+
+<form action="{{ url('admin_gallery_upload') }}" method="POST">
+    <label for="gallery-uploaded-photo">Uploader une photo : </label><input name="uploaded-photo"  id="gallery-uploaded-photo" type="file">
+    <input type="submit" value="Valider">
+</form>
+
+{{ form(form) }}
+</body>
+</html>
