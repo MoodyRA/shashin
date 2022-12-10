@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\File\UseCase\MoveFileToStorage;
+namespace Shashin\File\UseCase\MoveFileToStorage;
 
-use App\Domain\File\Enum\FileError;
-use App\Domain\File\FileStorageException;
-use App\Domain\File\FileStorageInterface;
+use Shashin\File\Enum\FileError;
+use Shashin\File\FileStorageException;
+use Shashin\File\FileStorageInterface;
 use Webmozart\Assert\Assert;
 use Webmozart\Assert\InvalidArgumentException;
 

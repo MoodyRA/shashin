@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Photo\Entity;
+namespace Shashin\Photo\Entity;
 
-use App\Domain\File\Entity\File;
+use Shashin\File\Entity\File;
 use UnexpectedValueException;
 
 class Photo extends File

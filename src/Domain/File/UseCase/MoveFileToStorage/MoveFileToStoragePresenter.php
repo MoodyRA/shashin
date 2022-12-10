@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\File\UseCase\MoveFileToStorage;
+namespace Shashin\File\UseCase\MoveFileToStorage;
 
 interface MoveFileToStoragePresenter
 {

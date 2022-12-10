@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Web\Controller\Admin;
 
-use App\Domain\File\Enum\FileType as PhotoExtension;
-use App\Domain\Photo\Entity\Photo;
+use Shashin\File\Enum\FileType as PhotoExtension;
+use Shashin\Photo\Entity\Photo;
 use Moody\ValueObject\Identity\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FileType as FormFileType;

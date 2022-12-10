@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\File\Enum;
+namespace Shashin\File\Enum;
 
 enum FileType: string
 {

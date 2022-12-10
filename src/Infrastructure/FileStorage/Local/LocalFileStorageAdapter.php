@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\FileStorage\Local;
 
-use App\Domain\File\Entity\File;
-use App\Domain\File\FileStorageException;
-use App\Domain\File\FileStorageInterface;
+use Shashin\File\Entity\File;
+use Shashin\File\FileStorageException;
+use Shashin\File\FileStorageInterface;
 use App\Infrastructure\FileStorage\PathPrefixer;
 use App\Infrastructure\FileStorage\UnixFilePermission;
 

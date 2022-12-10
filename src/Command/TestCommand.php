@@ -2,9 +2,9 @@
 
 namespace App\Command;
 
-use App\Domain\File\Entity\File;
-use App\Domain\File\Enum\FileType;
-use App\Domain\Photo\Entity\Photo;
+use Shashin\File\Entity\File;
+use Shashin\File\Enum\FileType;
+use Shashin\Photo\Entity\Photo;
 use App\Infrastructure\FileStorage\Local\LocalFileStorageAdapter;
 use App\Infrastructure\FileStorage\PathPrefixer;
 use Moody\ValueObject\Identity\Uuid;

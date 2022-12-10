@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\File;
+namespace Shashin\File;
 
-use App\Domain\File\Entity\File;
+use Shashin\File\Entity\File;
 
 interface FileStorageInterface
 {

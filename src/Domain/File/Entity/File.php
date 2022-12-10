@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\File\Entity;
+namespace Shashin\File\Entity;
 
-use App\Domain\File\Enum\FileType;
+use Shashin\File\Enum\FileType;
 use DateTime;
 use Moody\ValueObject\Identity\Uuid;
 use UnexpectedValueException;

@@ -2,10 +2,10 @@
 
 namespace App\Command;
 
-use App\Domain\File\Enum\FileType;
-use App\Domain\File\UseCase\MoveFileToStorage\MoveFileToStorage;
-use App\Domain\File\UseCase\MoveFileToStorage\MoveFileToStorageRequest;
-use App\Domain\Photo\Entity\Photo;
+use Shashin\File\Enum\FileType;
+use Shashin\File\UseCase\MoveFileToStorage\MoveFileToStorage;
+use Shashin\File\UseCase\MoveFileToStorage\MoveFileToStorageRequest;
+use Shashin\Photo\Entity\Photo;
 use App\Infrastructure\FileStorage\Local\LocalFileStorageAdapter;
 use App\Presentation\File\MoveFileToStorage\MoveFileToStorageConsolePresenter;
 use Moody\ValueObject\Identity\Uuid;

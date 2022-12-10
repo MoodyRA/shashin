@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\Photo\Repository;
+namespace Shashin\Photo\Repository;
 
-use App\Domain\Photo\Entity\Photo;
+use Shashin\Photo\Entity\Photo;
 
 interface PhotoRepository
 {

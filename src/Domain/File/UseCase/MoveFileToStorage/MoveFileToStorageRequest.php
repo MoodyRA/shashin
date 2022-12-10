@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\File\UseCase\MoveFileToStorage;
+namespace Shashin\File\UseCase\MoveFileToStorage;
 
-use App\Domain\File\Entity\File;
+use Shashin\File\Entity\File;
 
 class MoveFileToStorageRequest
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Presentation\File\MoveFileToStorage;
 
-use App\Domain\File\UseCase\MoveFileToStorage\MoveFileToStoragePresenter;
-use App\Domain\File\UseCase\MoveFileToStorage\MoveFileToStorageResponse;
+use Shashin\File\UseCase\MoveFileToStorage\MoveFileToStoragePresenter;
+use Shashin\File\UseCase\MoveFileToStorage\MoveFileToStorageResponse;
 use App\Presentation\Notification\ConsoleNotification;
 use App\Presentation\Notification\ConsoleNotificationType;
 use InvalidArgumentException;
