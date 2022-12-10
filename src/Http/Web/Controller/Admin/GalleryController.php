@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Web\Controller\Admin;
+namespace App\Http\Web\Controller\Admin;
 
 use App\Domain\File\Enum\FileType as PhotoExtension;
 use App\Domain\Photo\Entity\Photo;
 use Moody\ValueObject\Identity\Uuid;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FileType as FormFileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/admin/gallery', name: 'admin_gallery_')]
-class GalleryController extends AdminController
+class GalleryController extends AbstractController
 {
     #[Route('', methods: ['GET'])]
     public function index(): Response
