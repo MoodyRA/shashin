@@ -30,7 +30,10 @@ class MoveFileToStorageConsolePresenter implements MoveFileToStoragePresenter
         $this->viewModel = new MoveFileToStorageConsoleViewModel();
         foreach ($response->getErrors() as $error) {
             $this->viewModel->addNotification(
-                new ConsoleNotification(ConsoleNotificationType::ERROR, $this->translator->trans($error->value))
+                new ConsoleNotification(
+                    ConsoleNotificationType::ERROR,
+                    $this->translator->trans($error->getMessage(), $error->getParameters())
+                )
             );
         }
     }

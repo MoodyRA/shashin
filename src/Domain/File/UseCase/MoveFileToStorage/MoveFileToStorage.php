@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Shashin\File\UseCase\MoveFileToStorage;
 
+use Shashin\Common\Error\ResponseError;
 use Shashin\File\Enum\FileError;
 use Shashin\File\FileStorageException;
 use Shashin\File\FileStorageInterface;
@@ -25,15 +26,19 @@ class MoveFileToStorage
      * @param MoveFileToStoragePresenter $presenter
      * @return void
      */
-    public function execute(MoveFileToStorageRequest $request, MoveFileToStoragePresenter $presenter)
-    {
+    public function execute(
+        MoveFileToStorageRequest $request,
+        MoveFileToStoragePresenter $presenter
+    ): void {
         $response = new MoveFileToStorageResponse();
         $isValid = $this->checkRequest($request, $response);
         if ($isValid) {
             try {
                 $this->storage->move($request->getSourcePath(), $request->getFile());
             } catch (FileStorageException $e) {
-                $response->addError(FileError::FILE_MOVE_FAILED);
+                $response->addError(
+                    new ResponseError(FileError::FILE_MOVE_FAILED->value)
+                );
             }
         }
         $presenter->present($response);
@@ -50,7 +55,9 @@ class MoveFileToStorage
             Assert::fileExists($request->getSourcePath());
             return true;
         } catch (InvalidArgumentException $e) {
-            $response->addError(FileError::FILE_NOT_FOUND);
+            $response->addError(
+                new ResponseError(FileError::FILE_NOT_FOUND->value)
+            );
             return false;
         }
     }

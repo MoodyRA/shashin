@@ -4,27 +4,8 @@ declare(strict_types=1);
 
 namespace Shashin\File\UseCase\MoveFileToStorage;
 
-use Shashin\File\Enum\FileError;
+use Shashin\Common\UseCase\AbstractErrorResponse;
 
-class MoveFileToStorageResponse
+class MoveFileToStorageResponse extends AbstractErrorResponse
 {
-    /** @var FileError[] */
-    private array $errors = [];
-
-    /**
-     * @param FileError $error
-     * @return void
-     */
-    public function addError(FileError $error): void
-    {
-        $this->errors[] = $error;
-    }
-
-    /**
-     * @return array
-     */
-    public function getErrors(): array
-    {
-        return $this->errors;
-    }
 }
