@@ -37,7 +37,7 @@ enum FileType: string
     }
 
     /**
-     * @return array
+     * @return array<string>
      */
     public function imageTypeValues(): array
     {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Shashin\File\Entity;
 
+use Shashin\Common\Entity\SerializableEntity;
 use Shashin\File\Enum\FileType;
 use DateTime;
 use Moody\ValueObject\Identity\Uuid;
-use UnexpectedValueException;
 
-class File
+class File extends SerializableEntity
 {
     /**
      * @param Uuid     $id
@@ -18,7 +18,6 @@ class File
      * @param string   $relativePath
      * @param int      $size
      * @param DateTime $addedTime
-     * @throws UnexpectedValueException
      */
     public function __construct(
         protected Uuid $id,
@@ -28,15 +27,6 @@ class File
         protected int $size = 0,
         protected DateTime $addedTime = new DateTime('now')
     ) {
-        $this->verifyType();
-    }
-
-    /**
-     * @return void
-     * @throws UnexpectedValueException
-     */
-    protected function verifyType(): void
-    {
     }
 
     /**

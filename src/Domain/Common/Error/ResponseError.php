@@ -4,6 +4,10 @@ namespace Shashin\Common\Error;
 
 class ResponseError
 {
+    /**
+     * @param string $message
+     * @param array  $parameters
+     */
     public function __construct(
         private string $message,
         private array $parameters = []

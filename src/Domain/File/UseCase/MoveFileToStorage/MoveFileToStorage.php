@@ -6,18 +6,18 @@ namespace Shashin\File\UseCase\MoveFileToStorage;
 
 use Shashin\Common\Error\ResponseError;
 use Shashin\File\Enum\FileError;
-use Shashin\File\FileStorageException;
-use Shashin\File\FileStorageInterface;
+use Shashin\File\FileSystemException;
+use Shashin\File\FileSystemInterface;
 use Webmozart\Assert\Assert;
 use Webmozart\Assert\InvalidArgumentException;
 
 class MoveFileToStorage
 {
     /**
-     * @param FileStorageInterface $storage
+     * @param FileSystemInterface $storage
      */
     public function __construct(
-        private FileStorageInterface $storage
+        private FileSystemInterface $storage
     ) {
     }
 
@@ -34,8 +34,8 @@ class MoveFileToStorage
         $isValid = $this->checkRequest($request, $response);
         if ($isValid) {
             try {
-                $this->storage->move($request->getSourcePath(), $request->getFile());
-            } catch (FileStorageException $e) {
+                $this->storage->add($request->getSourcePath(), $request->getFile());
+            } catch (FileSystemException $e) {
                 $response->addError(
                     new ResponseError(FileError::FILE_MOVE_FAILED->value)
                 );

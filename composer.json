@@ -49,9 +49,6 @@
             "symfony/runtime": true
         },
         "optimize-autoloader": true,
-        "preferred-install": {
-            "*": "dist"
-        },
         "sort-packages": true
     },
     "autoload": {
@@ -96,6 +93,7 @@
         }
     },
     "require-dev": {
+        "phpstan/phpstan": "^1.9",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.1.*",
         "symfony/css-selector": "6.1.*",

@@ -6,7 +6,7 @@ use Shashin\File\Enum\FileType;
 use Shashin\File\UseCase\MoveFileToStorage\MoveFileToStorage;
 use Shashin\File\UseCase\MoveFileToStorage\MoveFileToStorageRequest;
 use Shashin\Photo\Entity\Photo;
-use App\Infrastructure\FileStorage\Local\LocalFileStorageAdapter;
+use App\Infrastructure\FileStorage\Local\LocalFileSystemAdapter;
 use App\Presentation\File\MoveFileToStorage\MoveFileToStorageConsolePresenter;
 use Moody\ValueObject\Identity\Uuid;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -53,7 +53,7 @@ class MoveFileToStorageCommand extends Command
                 ''
             );
             // chemin à récupérer plus tard par repo
-            $useCase = new MoveFileToStorage(new LocalFileStorageAdapter('/home/shashin/data/gallery'));
+            $useCase = new MoveFileToStorage(new LocalFileSystemAdapter('/home/shashin/data/gallery'));
             $useCase->execute(
                 new MoveFileToStorageRequest($input->getArgument('source'), $file),
                 $presenter = new MoveFileToStorageConsolePresenter($this->translator)
