@@ -873,10 +873,14 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MoodyRA/value-objects.git",
-                "reference": "d9ededfc536a9b328360e63764e36900f9abe69f"
+                "reference": "bbdc8396af8e509cfa5fc4cdf351f5f8cc2bbb76"
             },
             "require": {
                 "ramsey/uuid": "4.*"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "9.*"
             },
             "default-branch": true,
             "type": "package",
@@ -891,7 +895,7 @@
                 }
             },
             "description": "A collection of value objects.",
-            "time": "2022-11-26T23:32:15+00:00"
+            "time": "2023-01-14T16:00:40+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Shashin\File\Entity;
 
-use Shashin\Common\Entity\SerializableEntity;
+use Shashin\Common\Entity\Entity;
 use Shashin\File\Enum\FileType;
 use DateTime;
 use Moody\ValueObject\Identity\Uuid;
 
-class File extends SerializableEntity
+class File extends Entity
 {
     /**
      * @param Uuid     $id
@@ -20,21 +20,14 @@ class File extends SerializableEntity
      * @param DateTime $addedTime
      */
     public function __construct(
-        protected Uuid $id,
+        Uuid $id,
         protected string $name,
         protected FileType $type,
         protected string $relativePath,
         protected int $size = 0,
         protected DateTime $addedTime = new DateTime('now')
     ) {
-    }
-
-    /**
-     * @return Uuid
-     */
-    public function getId(): Uuid
-    {
-        return $this->id;
+        $this->setId($id);
     }
 
     /**

@@ -4,9 +4,9 @@ namespace Shashin\Camera\Entity;
 
 use Moody\ValueObject\Identity\Uuid;
 use Shashin\Camera\Enum\CameraSensorSize;
-use Shashin\Common\Entity\SerializableEntity;
+use Shashin\Common\Entity\Entity;
 
-class Camera extends SerializableEntity
+class Camera extends Entity
 {
     /**
      * @param Uuid             $id
@@ -20,14 +20,6 @@ class Camera extends SerializableEntity
         protected string $model,
         protected CameraSensorSize $sensorSize
     ) {
-    }
-
-    /**
-     * @return Uuid
-     */
-    public function getId(): Uuid
-    {
-        return $this->id;
     }
 
     /**

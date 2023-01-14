@@ -3,10 +3,10 @@
 namespace Shashin\Lens\Entity;
 
 use Moody\ValueObject\Identity\Uuid;
-use Shashin\Common\Entity\SerializableEntity;
+use Shashin\Common\Entity\Entity;
 use Shashin\Lens\ValueObject\FocalLenght;
 
-class Lens extends SerializableEntity
+class Lens extends Entity
 {
     /**
      * @param Uuid        $id
@@ -16,21 +16,14 @@ class Lens extends SerializableEntity
      * @param FocalLenght $maxFocalLength
      */
     public function __construct(
-        protected Uuid $id,
+        Uuid $id,
         protected string $brand,
         protected string $model,
         protected FocalLenght $minFocalLength,
         protected FocalLenght $maxFocalLength,
 
     ) {
-    }
-
-    /**
-     * @return Uuid
-     */
-    public function getId(): Uuid
-    {
-        return $this->id;
+        $this->setId($id);
     }
 
     /**
