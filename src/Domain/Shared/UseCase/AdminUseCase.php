@@ -2,7 +2,7 @@
 
 namespace Shashin\Shared\UseCase;
 
-use Shashin\Domain\User\Enum\UserError;
+use Shashin\User\Enum\UserError;
 use Shashin\Shared\Authorization\AuthorizationContextInterface;
 use Shashin\Shared\Error\ErrorMessage;
 use Shashin\Shared\Error\ResponseError;

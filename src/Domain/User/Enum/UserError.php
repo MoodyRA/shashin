@@ -1,6 +1,6 @@
 <?php
 
-namespace Shashin\Domain\User\Enum;
+namespace Shashin\User\Enum;
 
 enum UserError: string
 {

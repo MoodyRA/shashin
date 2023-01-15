@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Shashin\User\UseCase\RegisterAsAdmin;
 
-use Shashin\Domain\User\Entity\User;
-use Shashin\Domain\User\Entity\UserRepositoryInterface;
-use Shashin\Domain\User\Enum\UserError;
+use Shashin\User\Entity\User;
+use Shashin\User\Entity\UserRepositoryInterface;
+use Shashin\User\Enum\UserError;
 use Shashin\Shared\Authorization\AuthorizationContextInterface;
 use Shashin\Shared\Error\ErrorMessage;
 use Shashin\Shared\Error\ResponseError;

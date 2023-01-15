@@ -2,7 +2,7 @@
 
 namespace Shashin\User\UseCase\RegisterAsAdmin;
 
-use Shashin\Domain\User\Entity\User;
+use Shashin\User\Entity\User;
 use Shashin\Shared\UseCase\AbstractErrorResponse;
 
 class RegisterAsAdminResponse extends AbstractErrorResponse

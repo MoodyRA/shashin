@@ -1,6 +1,6 @@
 <?php
 
-namespace Shashin\Domain\User\Model;
+namespace Shashin\User\Model;
 
 use Moody\ValueObject\Auth\HashedPassword;
 use Moody\ValueObject\Web\EmailAddress;

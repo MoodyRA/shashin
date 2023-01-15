@@ -1,8 +1,8 @@
 <?php
 
-namespace Shashin\Domain\User\Entity;
+namespace Shashin\User\Entity;
 
-use Shashin\Domain\User\Model\Credential;
+use Shashin\User\Model\Credential;
 use Shashin\Shared\Exception\RepositoryException;
 
 interface UserRepositoryInterface

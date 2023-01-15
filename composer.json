@@ -54,12 +54,13 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "Shashin\\" : "src/Domain/"
+            "Shashin\\": "src/Domain/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "Shashin\\Tests\\": "tests/Domain"
         }
     },
     "replace": {

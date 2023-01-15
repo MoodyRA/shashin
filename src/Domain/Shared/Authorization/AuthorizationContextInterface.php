@@ -2,7 +2,7 @@
 
 namespace Shashin\Shared\Authorization;
 
-use Shashin\Domain\User\Entity\User;
+use Shashin\User\Entity\User;
 
 interface AuthorizationContextInterface
 {
