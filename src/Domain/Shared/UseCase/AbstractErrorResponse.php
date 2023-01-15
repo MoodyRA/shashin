@@ -1,8 +1,8 @@
 <?php
 
-namespace Shashin\Common\UseCase;
+namespace Shashin\Shared\UseCase;
 
-use Shashin\Common\Error\ResponseError;
+use Shashin\Shared\Error\ResponseError;
 
 /**
  * Gère les erreurs pour les réponses de use case

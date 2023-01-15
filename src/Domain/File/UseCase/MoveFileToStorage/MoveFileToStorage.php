@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Shashin\File\UseCase\MoveFileToStorage;
 
-use Shashin\Common\Error\ResponseError;
+use Shashin\Shared\Error\ResponseError;
 use Shashin\File\Enum\FileError;
 use Shashin\File\FileSystemException;
 use Shashin\File\FileSystemInterface;

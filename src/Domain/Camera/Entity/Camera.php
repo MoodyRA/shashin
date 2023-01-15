@@ -4,7 +4,7 @@ namespace Shashin\Camera\Entity;
 
 use Moody\ValueObject\Identity\Uuid;
 use Shashin\Camera\Enum\CameraSensorSize;
-use Shashin\Common\Entity\Entity;
+use Shashin\Shared\Entity\Entity;
 
 class Camera extends Entity
 {

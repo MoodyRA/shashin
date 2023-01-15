@@ -1,6 +1,6 @@
 <?php
 
-namespace Shashin\Common\Exception;
+namespace Shashin\Shared\Exception;
 
 use Exception;
 use Throwable;

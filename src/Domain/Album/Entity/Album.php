@@ -4,15 +4,11 @@ namespace Shashin\Album\Entity;
 
 use DateTime;
 use Moody\ValueObject\Identity\Uuid;
-use Shashin\Common\Entity\Entity;
+use Shashin\Shared\Entity\Entity;
 use Shashin\Photo\Collection\PhotoCollection;
 
 class Album extends Entity
 {
-    /** @var DateTime */
-    protected DateTime $createdAt;
-    /** @var DateTime */
-    protected DateTime $updatedAt;
     /** @var PhotoCollection */
     protected PhotoCollection $photos;
 
@@ -26,42 +22,6 @@ class Album extends Entity
         $this->createdAt = new DateTime();
         $this->updatedAt = new DateTime();
         $this->photos = $photos ?? new PhotoCollection([]);
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getCreatedAt(): DateTime
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param DateTime $createdAt
-     * @return Album
-     */
-    public function setCreatedAt(DateTime $createdAt): Album
-    {
-        $this->createdAt = $createdAt;
-        return $this;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getUpdatedAt(): DateTime
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @param DateTime $updatedAt
-     * @return Album
-     */
-    public function setUpdatedAt(DateTime $updatedAt): Album
-    {
-        $this->updatedAt = $updatedAt;
-        return $this;
     }
 
     /**

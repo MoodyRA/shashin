@@ -3,7 +3,7 @@
 namespace Shashin\Lens\Entity;
 
 use Moody\ValueObject\Identity\Uuid;
-use Shashin\Common\Entity\Entity;
+use Shashin\Shared\Entity\Entity;
 use Shashin\Lens\ValueObject\FocalLenght;
 
 class Lens extends Entity

@@ -1,8 +1,8 @@
 <?php
 
-namespace Shashin\Common\Error;
+namespace Shashin\Shared\Error;
 
-use Shashin\Common\Exception\DomainException;
+use Shashin\Shared\Exception\DomainException;
 
 class ResponseError
 {

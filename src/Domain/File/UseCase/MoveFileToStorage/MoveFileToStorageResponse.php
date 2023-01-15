@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Shashin\File\UseCase\MoveFileToStorage;
 
-use Shashin\Common\UseCase\AbstractErrorResponse;
+use Shashin\Shared\UseCase\AbstractErrorResponse;
 
 class MoveFileToStorageResponse extends AbstractErrorResponse
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Shashin\File\Entity;
 
-use Shashin\Common\Entity\Entity;
+use Shashin\Shared\Entity\Entity;
 use Shashin\File\Enum\FileType;
 use DateTime;
 use Moody\ValueObject\Identity\Uuid;
