@@ -69,4 +69,16 @@ class User extends Entity
         $this->isAdmin = $isAdmin;
         return $this;
     }
+
+    /**
+     * @return array<string,mixed>
+     */
+    public function jsonSerialize(): array
+    {
+        return [
+            'email' => $this->credential->getEmail()->getValue(),
+            'name' => $this->name,
+            'isAdmin' => $this->isAdmin
+        ];
+    }
 }
