@@ -11,7 +11,6 @@ use Shashin\Shared\Authorization\AuthorizationContextInterface;
 use Shashin\Shared\Error\ErrorMessage;
 use Shashin\Shared\Error\ResponseError;
 use Shashin\Shared\Exception\RepositoryException;
-use Shashin\Shared\Exception\UnexpectedValueException;
 use Shashin\Shared\UseCase\AdminUseCase;
 
 class RegisterAsAdmin extends AdminUseCase

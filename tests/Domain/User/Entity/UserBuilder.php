@@ -9,7 +9,7 @@ use Moody\ValueObject\Auth\PlainPassword;
 use Moody\ValueObject\ValueObjectIncorrectValueException;
 use Moody\ValueObject\Web\EmailAddress;
 use Shashin\User\Entity\User;
-use Shashin\User\Model\Credential;
+use Shashin\User\Model\Credentials;
 
 class UserBuilder
 {
@@ -21,7 +21,7 @@ class UserBuilder
      */
     public static function createUser(bool $isAdmin = false): User
     {
-        $credential = new Credential(
+        $credential = new Credentials(
             new EmailAddress('moody@mail.com'),
             HashedPassword::fromPlain(PlainPassword::fromString('MyCorrect_Password8'))
         );

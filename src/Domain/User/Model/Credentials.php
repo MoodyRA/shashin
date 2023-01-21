@@ -4,13 +4,18 @@ namespace Shashin\User\Model;
 
 use Moody\ValueObject\Auth\HashedPassword;
 use Moody\ValueObject\Web\EmailAddress;
+use Shashin\Shared\Trait\SerializableObject;
 
-class Credential
+class Credentials
 {
-    public function __construct(
-        protected EmailAddress $email,
-        protected HashedPassword $password
-    ) {
+    use SerializableObject;
+
+    /**
+     * @param EmailAddress   $email
+     * @param HashedPassword $password
+     */
+    public function __construct(protected EmailAddress $email, protected HashedPassword $password)
+    {
     }
 
     /**
@@ -23,9 +28,9 @@ class Credential
 
     /**
      * @param EmailAddress $email
-     * @return Credential
+     * @return Credentials
      */
-    public function setEmail(EmailAddress $email): Credential
+    public function setEmail(EmailAddress $email): Credentials
     {
         $this->email = $email;
         return $this;
@@ -41,9 +46,9 @@ class Credential
 
     /**
      * @param HashedPassword $password
-     * @return Credential
+     * @return Credentials
      */
-    public function setPassword(HashedPassword $password): Credential
+    public function setPassword(HashedPassword $password): Credentials
     {
         $this->password = $password;
         return $this;

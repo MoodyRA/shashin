@@ -4,33 +4,33 @@ declare(strict_types=1);
 
 namespace Shashin\User\Entity;
 
-use Shashin\User\Model\Credential;
+use Shashin\User\Model\Credentials;
 use Shashin\Shared\Entity\Entity;
 
 class User extends Entity
 {
     public function __construct(
-        protected Credential $credential,
+        protected Credentials $credentials,
         protected string $name,
         protected bool $isAdmin = false,
     ) {
     }
 
     /**
-     * @return Credential
+     * @return Credentials
      */
-    public function getCredential(): Credential
+    public function getCredentials(): Credentials
     {
-        return $this->credential;
+        return $this->credentials;
     }
 
     /**
-     * @param Credential $credential
+     * @param Credentials $credentials
      * @return User
      */
-    public function setCredential(Credential $credential): User
+    public function setCredentials(Credentials $credentials): User
     {
-        $this->credential = $credential;
+        $this->credentials = $credentials;
         return $this;
     }
 
@@ -76,7 +76,7 @@ class User extends Entity
     public function jsonSerialize(): array
     {
         return [
-            'email' => $this->credential->getEmail()->getValue(),
+            'email' => $this->credentials->getEmail()->getValue(),
             'name' => $this->name,
             'isAdmin' => $this->isAdmin
         ];
