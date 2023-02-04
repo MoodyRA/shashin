@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Shashin\File\Enum;
 
-enum FileType: string
+enum FileExtension: string
 {
     case BMP = 'bmp';
     case GIF = 'gif';
@@ -29,7 +29,7 @@ enum FileType: string
     }
 
     /**
-     * @return FileType[]
+     * @return FileExtension[]
      */
     public function imageTypes(): array
     {
@@ -58,9 +58,9 @@ enum FileType: string
 
     /**
      * @param string $fileName
-     * @return ?FileType
+     * @return ?FileExtension
      */
-    public static function fromFileName(string $fileName): ?FileType
+    public static function fromFileName(string $fileName): ?FileExtension
     {
         return self::tryFrom(strtolower(pathinfo($fileName, PATHINFO_EXTENSION)));
     }

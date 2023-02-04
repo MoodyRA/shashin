@@ -2,17 +2,24 @@
 
 namespace Shashin\File;
 
-use Shashin\File\Entity\File;
+use SplFileInfo;
 
 interface FileSystemInterface
 {
     /**
      * Ajoute un fichier à la destination indiqué dans $file.
      *
-     * @param string $source
-     * @param File   $file
+     * @param SplFileInfo $source
+     * @param SplFileInfo $destination
      * @return void
      * @throws FileSystemException
      */
-    public function add(string $source, File $file): void;
+    public function add(SplFileInfo $source, SplFileInfo $destination): void;
+
+    /**
+     * Doit retourner le chemin du dossier racine du file system. Ne doit pas contenir de séparateur à la fin.
+     *
+     * @return string
+     */
+    public function getRootPath(): string;
 }

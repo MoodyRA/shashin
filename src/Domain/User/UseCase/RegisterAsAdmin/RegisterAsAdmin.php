@@ -60,7 +60,7 @@ class RegisterAsAdmin extends AdminUseCase
      */
     private function checkUser(User $user, RegisterAsAdminResponse $response): bool
     {
-        if ($this->userRepository->exists($user->getCredential())) {
+        if ($this->userRepository->exists($user->getCredentials())) {
             $response->addError(
                 new ResponseError(
                     new ErrorMessage(UserError::EMAIL_ALREADY_EXISTS->value),

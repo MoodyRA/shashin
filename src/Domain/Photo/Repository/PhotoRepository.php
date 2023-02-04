@@ -2,19 +2,23 @@
 
 namespace Shashin\Photo\Repository;
 
+use Shashin\Photo\Collection\PhotoCollection;
 use Shashin\Photo\Entity\Photo;
+use Shashin\Shared\Exception\RepositoryException;
 
 interface PhotoRepository
 {
     /**
      * @param Photo $photo
      * @return void
+     * @throws RepositoryException
      */
-    public function save(Photo $photo): void;
+    public function create(Photo $photo): void;
 
     /**
      * @param Photo $photo
      * @return void
+     * @throws RepositoryException
      */
     public function delete(Photo $photo): void;
 }
