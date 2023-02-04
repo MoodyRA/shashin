@@ -16,6 +16,13 @@ interface PhotoRepository
     public function create(Photo $photo): void;
 
     /**
+     * @param PhotoCollection $photos
+     * @return void
+     * @throws RepositoryException
+     */
+    public function bulkCreate(PhotoCollection $photos): void;
+
+    /**
      * @param Photo $photo
      * @return void
      * @throws RepositoryException

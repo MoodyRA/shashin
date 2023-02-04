@@ -7,21 +7,21 @@ use Shashin\Shared\Exception\DomainException;
 class ResponseError
 {
     /**
-     * @param ErrorMessage         $message
+     * @param string               $message
      * @param array<string,mixed>  $parameters
      * @param DomainException|null $exception
      */
     public function __construct(
-        private readonly ErrorMessage $message,
+        private readonly string $message,
         private readonly array $parameters = [],
         private readonly ?DomainException $exception = null
     ) {
     }
 
     /**
-     * @return ErrorMessage
+     * @return string
      */
-    public function getMessage(): ErrorMessage
+    public function getMessage(): string
     {
         return $this->message;
     }

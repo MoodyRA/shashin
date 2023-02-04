@@ -2,6 +2,8 @@
 
 namespace Shashin\Photo\UseCase\AddPhotos;
 
-class AddPhotosResponse
+use Shashin\Shared\UseCase\AbstractErrorResponse;
+
+class AddPhotosResponse extends AbstractErrorResponse
 {
 }

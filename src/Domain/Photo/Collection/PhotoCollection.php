@@ -2,23 +2,27 @@
 
 namespace Shashin\Photo\Collection;
 
-use Ramsey\Collection\Collection;
+use Ramsey\Collection\AbstractCollection;
 use Shashin\Photo\Entity\Photo;
 
-class PhotoCollection
+/**
+ * @extends AbstractCollection<Photo>
+ */
+class PhotoCollection extends AbstractCollection
 {
     /**
-     * @param Photo[] $photos
+     * @param Photo[] $items
      */
-    public function __construct(private array $photos)
+    public function __construct(array $items = [])
     {
+        parent::__construct($items);
     }
 
     /**
-     * @return Photo[]
+     * @return string
      */
-    public function all(): array
+    public function getType(): string
     {
-        return $this->photos;
+        return Photo::class;
     }
 }

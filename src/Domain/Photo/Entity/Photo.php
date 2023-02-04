@@ -12,8 +12,8 @@ use Shashin\Lens\Entity\Lens;
 use Shashin\Lens\ValueObject\FocalLenght;
 use Shashin\Photo\Model\Exposure;
 use Shashin\Shared\Entity\Entity;
+use Shashin\Shared\Exception\UnexpectedValueException;
 use SplFileInfo;
-use UnexpectedValueException;
 
 class Photo extends Entity
 {
@@ -37,10 +37,6 @@ class Photo extends Entity
         protected SplFileInfo $file,
         protected DateTime $addedTime = new DateTime('now')
     ) {
-        if (!$file->isFile()) {
-            throw new UnexpectedValueException("Photo instance must have an existing file");
-        }
-
         $extension = FileExtension::fromFileName($file->getFilename());
         if (!$extension->isImageType()) {
             throw new UnexpectedValueException(
@@ -133,13 +129,9 @@ class Photo extends Entity
     /**
      * @param SplFileInfo $file
      * @return $this
-     * @throws UnexpectedValueException
      */
     public function setFile(SplFileInfo $file): Photo
     {
-        if (!$file->isFile()) {
-            throw new UnexpectedValueException("Photo instance must have an existing file");
-        }
         $this->file = $file;
         return $this;
     }
@@ -167,7 +159,7 @@ class Photo extends Entity
      *
      * @return string
      */
-    public function fileSystemFileName(): string
+    public function fileNameForFileSystem(): string
     {
         return $this->id->getValue() . '.' . $this->file->getExtension();
     }

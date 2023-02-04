@@ -9,17 +9,15 @@ abstract class DomainException extends Exception
 {
     /**
      * @param string              $message
-     * @param int                 $code
      * @param array<string,mixed> $options
      * @param Throwable|null      $previous
      */
     public function __construct(
         string $message,
-        int $code = 0,
         protected array $options = [],
         Throwable $previous = null
     ) {
-        parent::__construct($message, $code, $previous);
+        parent::__construct($message, 0, $previous);
 
         $this->addOptions(
             [

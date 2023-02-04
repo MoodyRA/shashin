@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Shashin\User\UseCase\Login;
 
-use Shashin\Shared\Error\ErrorMessage;
 use Shashin\Shared\Error\ResponseError;
 use Shashin\Shared\Exception\RepositoryException;
 use Shashin\User\Entity\UserRepositoryInterface;
@@ -37,7 +36,7 @@ class Login
                 } else {
                     $response->addError(
                         new ResponseError(
-                            new ErrorMessage(UserError::WRONG_PASSWORD->value),
+                            UserError::WRONG_PASSWORD->value,
                             ['wrong_password' => $request->getPassword()->getValue()]
                         )
                     );
@@ -45,7 +44,7 @@ class Login
             } else {
                 $response->addError(
                     new ResponseError(
-                        new ErrorMessage(UserError::NOT_FOUND->value),
+                        UserError::NOT_FOUND->value,
                         ['email' => $request->getEmail()->getValue()]
                     )
                 );
@@ -53,7 +52,7 @@ class Login
         } catch (RepositoryException $e) {
             $response->addError(
                 new ResponseError(
-                    new ErrorMessage(UserError::REGISTRATION_FAILED->value),
+                    UserError::REGISTRATION_FAILED->value,
                     ['user' => $user->jsonSerialize()],
                     $e
                 )

@@ -8,7 +8,6 @@ use Shashin\User\Entity\User;
 use Shashin\User\Entity\UserRepositoryInterface;
 use Shashin\User\Enum\UserError;
 use Shashin\Shared\Authorization\AuthorizationContextInterface;
-use Shashin\Shared\Error\ErrorMessage;
 use Shashin\Shared\Error\ResponseError;
 use Shashin\Shared\Exception\RepositoryException;
 use Shashin\Shared\UseCase\AdminUseCase;
@@ -43,7 +42,7 @@ class RegisterAsAdmin extends AdminUseCase
         } catch (RepositoryException $e) {
             $response->addError(
                 new ResponseError(
-                    new ErrorMessage(UserError::REGISTRATION_FAILED->value),
+                    UserError::REGISTRATION_FAILED->value,
                     ['user' => $user->jsonSerialize()],
                     $e
                 )
@@ -63,7 +62,7 @@ class RegisterAsAdmin extends AdminUseCase
         if ($this->userRepository->exists($user->getCredentials())) {
             $response->addError(
                 new ResponseError(
-                    new ErrorMessage(UserError::EMAIL_ALREADY_EXISTS->value),
+                    UserError::EMAIL_ALREADY_EXISTS->value,
                     ['user' => $user->jsonSerialize()]
                 )
             );
