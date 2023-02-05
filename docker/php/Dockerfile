@@ -12,7 +12,8 @@ RUN addgroup --gid ${GROUP_ID} ${USER_NAME} \
 RUN apk add --no-cache bash $PHPIZE_DEPS \
     && pecl install xdebug-3.1.3 \
     && docker-php-ext-enable xdebug \
-    && docker-php-ext-configure intl && docker-php-ext-install intl
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl exif
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
